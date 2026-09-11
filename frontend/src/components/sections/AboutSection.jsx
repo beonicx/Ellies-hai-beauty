@@ -26,8 +26,14 @@ const pillars = [
 
 export default function AboutSection() {
   return (
-    <section className="py-28 bg-espresso text-cream overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-28 bg-espresso text-cream overflow-hidden relative">
+      {/* Decorative backgrounds */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-rose-gold/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/4" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-mocha/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/4" />
+      <div className="absolute top-1/2 right-10 -translate-y-1/2 w-px h-60 bg-gradient-to-b from-transparent via-rose-gold/15 to-transparent hidden xl:block" />
+      <div className="absolute top-16 left-1/4 w-40 h-px bg-gradient-to-r from-transparent via-rose-gold/10 to-transparent hidden lg:block" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image collage */}
           <div className="relative h-[520px] hidden lg:block">

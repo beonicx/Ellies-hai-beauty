@@ -48,8 +48,14 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-28 bg-cream">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-28 bg-cream relative overflow-hidden">
+      {/* Decorative backgrounds */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-rose-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-champagne/60 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4" />
+      <div className="absolute top-20 left-10 w-px h-40 bg-gradient-to-b from-transparent via-rose-gold/20 to-transparent hidden lg:block" />
+      <div className="absolute bottom-32 right-16 w-32 h-px bg-gradient-to-r from-transparent via-rose-gold/20 to-transparent hidden lg:block" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>

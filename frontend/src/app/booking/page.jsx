@@ -41,7 +41,7 @@ export default function BookingPage() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+  const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001/api";
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

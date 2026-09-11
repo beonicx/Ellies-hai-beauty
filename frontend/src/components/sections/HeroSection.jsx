@@ -4,20 +4,34 @@ import { ArrowRight, Star } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background */}
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-espresso">
+      {/* Layered gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-espresso via-mocha/80 to-espresso" />
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 opacity-30"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1560066984-138daaa0c66d?w=1600&q=90')",
+            "radial-gradient(ellipse at 70% 20%, #C9956B 0%, transparent 50%), radial-gradient(ellipse at 20% 80%, #A67050 0%, transparent 45%), radial-gradient(ellipse at 90% 70%, #E8C4A0 0%, transparent 40%)",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/60 to-transparent" />
+      <div
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse at 50% 50%, #F0E6D3 0%, transparent 60%)",
+        }}
+      />
 
-      {/* Decorative lines */}
+      {/* Decorative elements */}
       <div className="absolute top-1/4 right-[15%] w-px h-32 bg-rose-gold/40 hidden lg:block" />
       <div className="absolute bottom-1/4 right-[20%] w-20 h-px bg-rose-gold/40 hidden lg:block" />
+      <div className="absolute top-[12%] right-[8%] w-56 h-56 border border-rose-gold/10 rounded-full hidden xl:block" />
+      <div className="absolute bottom-[18%] right-[12%] w-32 h-32 border border-rose-gold/8 rounded-full hidden xl:block" />
+      <div className="absolute top-[60%] right-[5%] w-20 h-20 border border-rose-gold/6 rounded-full hidden xl:block" />
+      <div className="absolute top-[20%] left-[3%] w-40 h-40 bg-rose-gold/8 rounded-full blur-3xl" />
+      <div className="absolute bottom-[10%] right-[20%] w-60 h-60 bg-rose-gold/6 rounded-full blur-3xl" />
+      <div className="absolute top-[50%] right-[35%] w-36 h-36 bg-champagne/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-espresso to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24">
         <div className="max-w-2xl">

@@ -79,8 +79,8 @@ export function AuthProvider({ children }) {
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || "Login failed");
     setUser(data.user);
-    setToken(data.token);
-    localStorage.setItem("auth_token", data.token);
+    setToken(data.accessToken);
+    localStorage.setItem("auth_token", data.accessToken);
     localStorage.setItem("auth_user", JSON.stringify(data.user));
     return data;
   }
@@ -94,8 +94,8 @@ export function AuthProvider({ children }) {
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || "Registration failed");
     setUser(data.user);
-    setToken(data.token);
-    localStorage.setItem("auth_token", data.token);
+    setToken(data.accessToken);
+    localStorage.setItem("auth_token", data.accessToken);
     localStorage.setItem("auth_user", JSON.stringify(data.user));
     return data;
   }

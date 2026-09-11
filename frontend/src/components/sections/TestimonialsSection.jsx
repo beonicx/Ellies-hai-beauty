@@ -33,8 +33,15 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-28 bg-champagne">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-28 bg-champagne relative overflow-hidden">
+      {/* Decorative backgrounds */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 bg-rose-light/20 rounded-full blur-3xl -translate-x-1/3" />
+      <div className="absolute top-0 right-1/4 w-64 h-64 bg-rose-gold/5 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-cream/40 rounded-full blur-3xl translate-x-1/4 translate-y-1/3" />
+      <div className="absolute top-24 right-12 w-px h-32 bg-gradient-to-b from-transparent via-rose-gold/15 to-transparent hidden lg:block" />
+      <div className="absolute bottom-20 left-16 w-24 h-px bg-gradient-to-r from-transparent via-rose-gold/15 to-transparent hidden lg:block" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <p className="font-sans text-sm tracking-[0.3em] uppercase text-rose-gold mb-3">
             Client Stories
@@ -48,11 +55,11 @@ export default function TestimonialsSection() {
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="bg-cream p-7 relative transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+              className="bg-cream/80 backdrop-blur-sm p-7 relative transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
             >
               {/* Quote mark */}
               <div className="font-display text-6xl text-rose-gold/20 absolute top-4 right-5 leading-none select-none">
-                "
+                &ldquo;
               </div>
 
               {/* Stars */}
@@ -62,7 +69,7 @@ export default function TestimonialsSection() {
                 ))}
               </div>
 
-              <p className="font-body text-mocha text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
+              <p className="font-body text-mocha text-sm leading-relaxed mb-6 italic">&ldquo;{t.text}&rdquo;</p>
 
               <div className="flex items-center gap-3 pt-4 border-t border-champagne">
                 <div className="w-10 h-10 rounded-full bg-rose-gold text-cream flex items-center justify-center font-sans text-xs font-semibold">

@@ -1,11 +1,19 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
-function generateToken(user) {
+function generateAccessToken(user) {
   return jwt.sign(
     { id: user._id, email: user.email, name: user.name, role: user.role },
     process.env.JWT_SECRET,
-    { expiresIn: "7d" }
+    { expiresIn: process.env.JWT_EXPIRATION || "1h" }
+  );
+}
+
+function generateRefreshToken(user) {
+  return jwt.sign(
+    { id: user._id },
+    process.env.JWT_REFRESH_SECRET,
+    { expiresIn: process.env.JWT_REFRESH_EXPIRATION || "7d" }
   );
 }
 
@@ -23,9 +31,10 @@ async function register(req, res) {
     }
 
     const user = await User.create({ name, email, password, phone });
-    const token = generateToken(user);
+    const accessToken = generateAccessToken(user);
+    const refreshToken = generateRefreshToken(user);
 
-    res.status(201).json({ user, token });
+    res.status(201).json({ user, accessToken, refreshToken });
   } catch (err) {
     console.error("Register error:", err);
     res.status(500).json({ error: "Registration failed" });
@@ -50,11 +59,37 @@ async function login(req, res) {
       return res.status(401).json({ error: "Invalid email or password" });
     }
 
-    const token = generateToken(user);
-    res.json({ user, token });
+    const accessToken = generateAccessToken(user);
+    const refreshToken = generateRefreshToken(user);
+    res.json({ user, accessToken, refreshToken });
   } catch (err) {
     console.error("Login error:", err);
     res.status(500).json({ error: "Login failed" });
+  }
+}
+
+async function refreshToken(req, res) {
+  try {
+    const { refreshToken: token } = req.body;
+
+    if (!token) {
+      return res.status(400).json({ error: "Refresh token is required" });
+    }
+
+    const decoded = jwt.verify(token, process.env.JWT_REFRESH_SECRET);
+    const user = await User.findById(decoded.id);
+
+    if (!user) {
+      return res.status(401).json({ error: "Invalid refresh token" });
+    }
+
+    const accessToken = generateAccessToken(user);
+    res.json({ accessToken });
+  } catch (err) {
+    if (err.name === "TokenExpiredError") {
+      return res.status(401).json({ error: "Refresh token expired, please login again" });
+    }
+    return res.status(403).json({ error: "Invalid refresh token" });
   }
 }
 
@@ -89,4 +124,4 @@ async function updateProfile(req, res) {
   }
 }
 
-module.exports = { register, login, getProfile, updateProfile };
+module.exports = { register, login, refreshToken, getProfile, updateProfile };
