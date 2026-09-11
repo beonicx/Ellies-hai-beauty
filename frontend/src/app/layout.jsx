@@ -4,12 +4,12 @@ import Footer from "../components/layout/Footer";
 import { AuthProvider } from "../context/AuthContext";
 
 export const metadata = {
-  metadataBase: new URL("https://ellieshairbeauty.com"),
-  title: "Ellie's Hair & Beauty | Premium Salon Experience",
+  metadataBase: new URL("https://habibsalonacademy.com"),
+  title: "Habib Salon & Academy | Premium Salon Experience",
   description:
-    "Ellie's Hair & Beauty — your destination for luxurious hair, skin, makeup, nail and spa services. Book an appointment today.",
+    "Habib Salon & Academy — your destination for luxurious hair, skin, makeup, nail and spa services. Book an appointment today.",
   openGraph: {
-    title: "Ellie's Hair & Beauty",
+    title: "Habib Salon & Academy",
     description: "Premium salon services tailored to you.",
     type: "website",
   },

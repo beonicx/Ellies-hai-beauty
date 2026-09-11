@@ -100,7 +100,7 @@ export default function Navbar() {
               className="text-rose-gold transition-transform duration-300 group-hover:rotate-45 sm:w-[22px] sm:h-[22px]"
             />
             <span className={`font-display text-base sm:text-lg lg:text-xl tracking-wide transition-colors duration-500 ${scrolled ? "text-espresso" : "text-cream"}`}>
-              <span className="text-rose-gold">Ellies</span> Hair & Beauty
+              <span className="text-rose-gold">Habib</span> Salon & Academy
             </span>
           </Link>
 

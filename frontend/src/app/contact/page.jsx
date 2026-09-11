@@ -64,7 +64,7 @@ export default function ContactPage() {
               {[
                 { icon: <MapPin size={20} />, title: "Address", content: "Mathiya (Baghi), Ghazipur\nUttar Pradesh, India" },
                 { icon: <Phone size={20} />, title: "Phone", content: "+91 9565 459518" },
-                { icon: <Mail size={20} />, title: "Email", content: "pankajyadav@ellieshairbeauty.com" },
+                { icon: <Mail size={20} />, title: "Email", content: "pankajyadav@habibsalonacademy.com" },
                 { icon: <Clock size={20} />, title: "Hours", content: "Mon–Sat: 9:00 AM – 8:00 PM\nSunday: 10:00 AM – 6:00 PM" },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4">

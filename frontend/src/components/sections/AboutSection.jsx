@@ -54,14 +54,14 @@ export default function AboutSection() {
           {/* Text */}
           <div>
             <p className="font-sans text-sm tracking-[0.3em] uppercase text-rose-gold mb-4">
-              About Ellie's
+              About Habib's
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-cream leading-tight mb-6">
               More Than a Salon —<br />
               <em className="text-rose-gold italic">A Sanctuary</em>
             </h2>
             <p className="font-body text-cream/70 mb-4 text-lg">
-              Founded with a passion for transformative beauty, Ellie's Hair & Beauty has grown into one
+              Founded with a passion for transformative beauty, Habib Salon & Academy has grown into one
               of the most trusted names in premium salon experiences. We believe beauty is deeply personal,
               and that's why every service is crafted just for you.
             </p>

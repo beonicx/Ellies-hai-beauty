@@ -81,7 +81,7 @@ const services = [
 ];
 
 export const metadata = {
-  title: "Services | Ellie's Hair & Beauty",
+  title: "Services | Habib Salon & Academy",
   description: "Explore our full range of hair, skin, makeup, nail and spa services.",
 };
 
@@ -95,7 +95,7 @@ export default function ServicesPage() {
         </p>
         <h1 className="font-display text-6xl text-cream">Our Services</h1>
         <p className="font-body text-cream/60 mt-4 max-w-xl mx-auto">
-          Every service at Ellie's begins with a personal consultation. Because you deserve beauty
+          Every service at Habib's begins with a personal consultation. Because you deserve beauty
           that's truly yours.
         </p>
       </div>

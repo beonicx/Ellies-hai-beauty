@@ -2,11 +2,11 @@ import Link from "next/link";
 import { Award, Heart, Leaf, Scissors, Users } from "lucide-react";
 
 export const metadata = {
-  title: "About | Ellie's Hair & Beauty",
+  title: "About | Habib Salon & Academy",
 };
 
 const team = [
-  { name: "Ellie Thompson", role: "Founder & Creative Director", speciality: "Colour & Balayage Expert" },
+  { name: "Habib", role: "Founder & Creative Director", speciality: "Colour & Balayage Expert" },
   { name: "Marco Ricci", role: "Senior Stylist", speciality: "Precision Cutting & Texture" },
   { name: "Aisha Patel", role: "Skincare Specialist", speciality: "Advanced Facials & Skincare" },
   { name: "Yasmine Laurel", role: "Makeup Artist", speciality: "Bridal & Editorial Makeup" },
@@ -30,7 +30,7 @@ export default function AboutPage() {
             Beauty with <em className="text-rose-gold italic">Purpose</em>
           </h1>
           <p className="font-body text-cream/70 text-lg">
-            Founded in 2012, Ellies Hair & Beauty was born from a simple belief: everyone deserves to
+            Founded in 2012, Habib Salon & Academy was born from a simple belief: everyone deserves to
             feel extraordinary in their own skin.
           </p>
         </div>
@@ -45,13 +45,13 @@ export default function AboutPage() {
               Where Every Client Leaves <em className="italic text-rose-gold">Glowing</em>
             </h2>
             <p className="font-body text-mocha mb-4">
-              Ellie's Hair & Beauty began as a single chair in Mayfair with a vision to combine
+              Habib Salon & Academy began as a single chair in Mayfair with a vision to combine
               world-class technical skill with a warmth and hospitality that makes every client feel at
               home. Today, we've served over 8,000 clients and built a team of passionate specialists
               across hair, skin, makeup, nails and wellness.
             </p>
             <p className="font-body text-mocha/70 mb-8">
-              Our founder, Ellie Thompson, trained under renowned stylists across London and Paris before
+              Our founder, Habib, trained under renowned stylists across London and Paris before
               bringing her expertise home to create a salon that redefines the luxury beauty experience —
               without the intimidation.
             </p>
@@ -71,7 +71,7 @@ export default function AboutPage() {
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&q=80"
-              alt="Ellie's salon interior"
+              alt="Habib salon interior"
               className="w-full h-[500px] object-cover"
             />
             <div className="absolute -bottom-6 -left-6 bg-rose-gold text-cream p-6 w-48 hidden lg:block">
@@ -145,7 +145,7 @@ export default function AboutPage() {
       <section className="bg-espresso py-20 text-center px-6">
         <h2 className="font-display text-4xl text-cream mb-4">Ready to Meet the Team?</h2>
         <p className="font-body text-cream/60 mb-8">
-          Book your first appointment and experience the Ellies difference.
+          Book your first appointment and experience the Habib difference.
         </p>
         <Link
           href="/booking"

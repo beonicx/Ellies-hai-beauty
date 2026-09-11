@@ -31,7 +31,7 @@ export default function GalleryPage() {
         <p className="font-sans text-sm tracking-[0.3em] uppercase text-rose-gold mb-3">Our Work</p>
         <h1 className="font-display text-6xl text-cream">Gallery</h1>
         <p className="font-body text-cream/60 mt-4 max-w-xl mx-auto">
-          A glimpse into the transformations that happen every day at Ellies Hair & Beauty.
+          A glimpse into the transformations that happen every day at Habib Salon & Academy.
         </p>
       </div>
 

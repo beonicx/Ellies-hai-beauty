@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <Scissors size={20} className="text-rose-gold" />
               <span className="font-display text-xl text-cream">
-                <span className="text-rose-gold">Ellies</span> Hair & Beauty
+                <span className="text-rose-gold">Habib</span> Salon & Academy
               </span>
             </div>
             <p className="font-body text-sm text-cream/60 leading-relaxed mb-6">
@@ -99,10 +99,10 @@ export default function Footer() {
               <li className="flex gap-3">
                 <Mail size={16} className="text-rose-gold shrink-0" />
                 <a
-                  href="mailto:hello@ellieshairbeauty.com"
+                  href="mailto:pankajyadav@habibsalonacademy.com"
                   className="hover:text-rose-gold transition-colors duration-300"
                 >
-                  pankajyadav@ellieshairbeauty.com
+                  pankajyadav@habibsalonacademy.com
                 </a>
               </li>
             </ul>
@@ -115,7 +115,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-cream/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-cream/40 font-sans">
-          <p>© {new Date().getFullYear()} Ellies Hair & Beauty. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Habib Salon & Academy. All rights reserved.</p>
           <p>Crafted with love for beautiful hair</p>
         </div>
       </div>

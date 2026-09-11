@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: "Sophie Clarke",
     role: "Regular Client",
-    text: "I've been coming to Ellie's for three years now and it never disappoints. The balayage they did on me last month was absolutely perfect. My hair has never looked more natural yet vibrant!",
+    text: "I've been coming to Habib's for three years now and it never disappoints. The balayage they did on me last month was absolutely perfect. My hair has never looked more natural yet vibrant!",
     stars: 5,
     avatar: "SC",
   },
