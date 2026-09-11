@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 const sendBookingNotification = async (booking) => {
   try {
     const info = await transporter.sendMail({
-      from: `"Ellie's Hair & Beauty" <${process.env.SMTP_USER}>`,
+      from: `"Habib Salon and Academy" <${process.env.SMTP_USER}>`,
       to: process.env.SALON_EMAIL,
       subject: "📅 New Booking Received",
       html: `

@@ -1,7 +1,7 @@
 {
-  "name": "ellies-hairbeauty-backend",
+  "name": "habib-salon-academy-backend",
   "version": "1.0.0",
-  "description": "Backend API for Ellie's Hair & Beauty Salon",
+  "description": "Backend API for Habib Salon and Academy",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

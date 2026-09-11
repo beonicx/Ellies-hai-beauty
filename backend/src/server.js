@@ -16,8 +16,8 @@ const PORT = process.env.PORT || 5001;
 // Middleware
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://ellieshairbeauty.com",
-  "https://www.ellieshairbeauty.com",
+  "https://habibsalonacademy.com",
+  "https://www.habibsalonacademy.com",
 ];
 
 app.use(
@@ -68,6 +68,6 @@ app.use((err, req, res, next) => {
 // Connect to DB then start server
 connectDB().then(() => {
   app.listen(PORT, () => {
-    console.log(`✅ Ellie's Hair & Beauty API running on port ${PORT}`);
+    console.log(`✅ Habib Salon and Academy API running on port ${PORT}`);
   });
 });
