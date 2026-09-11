@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import { AuthProvider } from "../context/AuthContext";
 
 export const metadata = {
   title: "Ellie's Hair & Beauty | Premium Salon Experience",
@@ -17,9 +18,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-cream">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

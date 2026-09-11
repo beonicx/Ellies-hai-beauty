@@ -1,7 +1,10 @@
-require("dotenv").config();
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "../.env.local") });
 const express = require("express");
 const cors = require("cors");
+const connectDB = require("./config/db");
 
+const authRouter = require("./routes/auth");
 const servicesRouter = require("./routes/services");
 const bookingRouter = require("./routes/booking");
 const galleryRouter = require("./routes/gallery");
@@ -14,7 +17,7 @@ const PORT = process.env.PORT || 5001;
 const allowedOrigins = [
   "http://localhost:3000",
   "https://ellieshairbeauty.com",
-  "https://www.ellieshairbeauty.com"
+  "https://www.ellieshairbeauty.com",
 ];
 
 app.use(
@@ -40,6 +43,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
+app.use("/api/auth", authRouter);
 app.use("/api/services", servicesRouter);
 app.use("/api/bookings", bookingRouter);
 app.use("/api/gallery", galleryRouter);
@@ -61,6 +65,9 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Internal server error" });
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Ellie's Hair & Beauty API running on port ${PORT}`);
+// Connect to DB then start server
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`✅ Ellie's Hair & Beauty API running on port ${PORT}`);
+  });
 });
