@@ -18,6 +18,8 @@ const allowedOrigins = [
   "http://localhost:3000",
   "https://habibsalonacademy.com",
   "https://www.habibsalonacademy.com",
+  "https://ellieshairbeauty.com",
+  "https://www.ellieshairbeauty.com",
 ];
 
 app.use(
