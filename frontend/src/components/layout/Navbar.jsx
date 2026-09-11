@@ -92,14 +92,14 @@ export default function Navbar() {
             : "bg-transparent py-3 lg:py-5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1.5 sm:gap-2 group flex-shrink-0">
+          <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
             <Scissors
-              size={20}
-              className="text-rose-gold transition-transform duration-300 group-hover:rotate-45 sm:w-[22px] sm:h-[22px]"
+              size={22}
+              className="text-rose-gold transition-transform duration-300 group-hover:rotate-45 lg:w-[24px] lg:h-[24px]"
             />
-            <span className={`font-display text-base sm:text-lg lg:text-xl tracking-wide transition-colors duration-500 ${scrolled ? "text-espresso" : "text-cream"}`}>
+            <span className={`font-display text-lg sm:text-xl lg:text-2xl tracking-wide transition-colors duration-500 ${scrolled ? "text-espresso" : "text-cream"}`}>
               <span className="text-rose-gold">Habib</span> Salon & Academy
             </span>
           </Link>
@@ -110,7 +110,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-sans text-xs xl:text-sm tracking-widest uppercase transition-colors duration-300 whitespace-nowrap ${scrolled ? "text-mocha hover:text-rose-gold" : "text-cream/80 hover:text-rose-gold"}`}
+                className={`font-sans text-sm xl:text-base tracking-widest uppercase transition-colors duration-300 whitespace-nowrap ${scrolled ? "text-mocha hover:text-rose-gold" : "text-cream/80 hover:text-rose-gold"}`}
               >
                 {link.label}
               </Link>
@@ -223,7 +223,7 @@ export default function Navbar() {
             {!loading && user && (
               <Link
                 href="/dashboard"
-                className="w-8 h-8 rounded-full bg-rose-gold text-cream flex items-center justify-center font-sans text-xs font-medium"
+                className="w-9 h-9 rounded-full bg-rose-gold text-cream flex items-center justify-center font-sans text-sm font-medium"
               >
                 {userInitial}
               </Link>
@@ -233,7 +233,7 @@ export default function Navbar() {
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
             >
-              {open ? <X size={24} /> : <Menu size={24} />}
+              {open ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
@@ -246,13 +246,13 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
             />
             <div className="lg:hidden bg-cream border-t border-champagne max-h-[calc(100vh-4rem)] overflow-y-auto">
-              <div className="px-4 sm:px-6 py-6 flex flex-col gap-4">
+              <div className="px-3 sm:px-6 py-6 flex flex-col gap-5">
                 {/* Nav Links */}
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="font-sans text-sm tracking-widest uppercase text-mocha hover:text-rose-gold transition-colors duration-300 py-1"
+                    className="font-sans text-base sm:text-lg tracking-widest uppercase text-mocha hover:text-rose-gold transition-colors duration-300 py-1"
                     onClick={() => setOpen(false)}
                   >
                     {link.label}
@@ -262,37 +262,37 @@ export default function Navbar() {
                 {/* Search - Mobile */}
                 <form
                   onSubmit={handleSearch}
-                  className="flex items-center border border-champagne rounded-md overflow-hidden bg-white mt-1"
+                  className="flex items-center border border-champagne rounded-lg overflow-hidden bg-white mt-1"
                 >
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search services..."
-                    className="flex-1 min-w-0 px-4 py-2.5 font-sans text-sm text-espresso placeholder:text-mocha/50 focus:outline-none"
+                    className="flex-1 min-w-0 px-4 py-3 font-sans text-base text-espresso placeholder:text-mocha/50 focus:outline-none"
                   />
                   <button
                     type="submit"
-                    className="px-3 py-2.5 text-rose-gold hover:text-espresso transition-colors flex-shrink-0"
+                    className="px-4 py-3 text-rose-gold hover:text-espresso transition-colors flex-shrink-0"
                   >
-                    <Search size={16} />
+                    <Search size={18} />
                   </button>
                 </form>
 
                 {/* Auth Section - Mobile */}
                 {!loading && (
-                  <div className="border-t border-champagne pt-4 flex flex-col gap-4">
+                  <div className="border-t border-champagne pt-5 flex flex-col gap-4">
                     {user ? (
                       <>
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-rose-gold text-cream flex items-center justify-center font-sans text-sm font-medium flex-shrink-0">
+                          <div className="w-11 h-11 rounded-full bg-rose-gold text-cream flex items-center justify-center font-sans text-base font-medium flex-shrink-0">
                             {userInitial}
                           </div>
                           <div className="min-w-0">
-                            <p className="font-sans text-sm font-medium text-espresso truncate">
+                            <p className="font-sans text-base font-medium text-espresso truncate">
                               {user.name}
                             </p>
-                            <p className="font-sans text-xs text-mocha truncate">
+                            <p className="font-sans text-sm text-mocha truncate">
                               {user.email}
                             </p>
                           </div>
@@ -301,52 +301,52 @@ export default function Navbar() {
                         <div className="grid grid-cols-2 gap-3">
                           <Link
                             href="/dashboard"
-                            className="flex items-center gap-2 bg-white rounded-lg border border-champagne px-3 py-3 font-sans text-xs sm:text-sm text-mocha hover:border-rose-gold hover:text-rose-gold transition-colors"
+                            className="flex items-center gap-2.5 bg-white rounded-lg border border-champagne px-4 py-3.5 font-sans text-sm sm:text-base text-mocha hover:border-rose-gold hover:text-rose-gold transition-colors"
                             onClick={() => setOpen(false)}
                           >
-                            <User size={16} className="flex-shrink-0" />
+                            <User size={18} className="flex-shrink-0" />
                             Dashboard
                           </Link>
                           <Link
                             href="/orders"
-                            className="flex items-center gap-2 bg-white rounded-lg border border-champagne px-3 py-3 font-sans text-xs sm:text-sm text-mocha hover:border-rose-gold hover:text-rose-gold transition-colors"
+                            className="flex items-center gap-2.5 bg-white rounded-lg border border-champagne px-4 py-3.5 font-sans text-sm sm:text-base text-mocha hover:border-rose-gold hover:text-rose-gold transition-colors"
                             onClick={() => setOpen(false)}
                           >
-                            <ShoppingBag size={16} className="flex-shrink-0" />
+                            <ShoppingBag size={18} className="flex-shrink-0" />
                             Orders
                           </Link>
                           <Link
                             href="/supercoins"
-                            className="flex items-center gap-2 bg-white rounded-lg border border-champagne px-3 py-3 font-sans text-xs sm:text-sm text-mocha hover:border-rose-gold hover:text-rose-gold transition-colors"
+                            className="flex items-center gap-2.5 bg-white rounded-lg border border-champagne px-4 py-3.5 font-sans text-sm sm:text-base text-mocha hover:border-rose-gold hover:text-rose-gold transition-colors"
                             onClick={() => setOpen(false)}
                           >
-                            <Coins size={16} className="flex-shrink-0" />
+                            <Coins size={18} className="flex-shrink-0" />
                             SuperCoins
                           </Link>
                           <Link
                             href="/coupons"
-                            className="flex items-center gap-2 bg-white rounded-lg border border-champagne px-3 py-3 font-sans text-xs sm:text-sm text-mocha hover:border-rose-gold hover:text-rose-gold transition-colors"
+                            className="flex items-center gap-2.5 bg-white rounded-lg border border-champagne px-4 py-3.5 font-sans text-sm sm:text-base text-mocha hover:border-rose-gold hover:text-rose-gold transition-colors"
                             onClick={() => setOpen(false)}
                           >
-                            <Ticket size={16} className="flex-shrink-0" />
+                            <Ticket size={18} className="flex-shrink-0" />
                             Coupons
                           </Link>
                         </div>
 
                         <button
                           onClick={handleLogout}
-                          className="flex items-center justify-center gap-2 w-full py-3 font-sans text-xs sm:text-sm tracking-widest uppercase text-mocha hover:text-rose-gold transition-colors duration-300 border border-champagne rounded-lg bg-white"
+                          className="flex items-center justify-center gap-2.5 w-full py-3.5 font-sans text-sm sm:text-base tracking-widest uppercase text-mocha hover:text-rose-gold transition-colors duration-300 border border-champagne rounded-lg bg-white"
                         >
-                          <LogOut size={16} />
+                          <LogOut size={18} />
                           Sign Out
                         </button>
                       </>
                     ) : (
                       <button
                         onClick={openLogin}
-                        className="flex items-center justify-center gap-2 font-sans text-sm tracking-widest uppercase text-cream bg-rose-gold hover:bg-espresso transition-colors duration-300 py-3 rounded-md"
+                        className="flex items-center justify-center gap-2.5 font-sans text-base tracking-widest uppercase text-cream bg-rose-gold hover:bg-espresso transition-colors duration-300 py-3.5 rounded-md"
                       >
-                        <User size={16} />
+                        <User size={18} />
                         Login / Register
                       </button>
                     )}
