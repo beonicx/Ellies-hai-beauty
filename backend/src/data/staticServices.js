@@ -1,0 +1,86 @@
+const services = [
+  {
+    id: 1,
+    category: "Hair",
+    slug: "hair",
+    description: "Expert cutting, colouring, styling and treatment services tailored to your hair type.",
+    icon: "scissors",
+    items: [
+      { id: "h1", name: "Haircut & Styling", price: 35, duration: 45, description: "Precision cut with blow-dry finish" },
+      { id: "h2", name: "Hair Colour", price: 65, duration: 90, description: "Full colour with premium ammonia-free products" },
+      { id: "h3", name: "Highlights / Balayage", price: 85, duration: 120, description: "Natural sun-kissed effect or bold highlights" },
+      { id: "h4", name: "Hair Spa & Ritual", price: 50, duration: 60, description: "Deep nourishing treatment from root to tip" },
+      { id: "h5", name: "Rebonding / Smoothening", price: 120, duration: 180, description: "Glass-like frizz-free straightening" },
+      { id: "h6", name: "Keratin Treatment", price: 100, duration: 150, description: "Long-lasting smoothness and shine" },
+    ],
+  },
+  {
+    id: 2,
+    category: "Skin",
+    slug: "skin",
+    description: "Luxury facials and skincare treatments for radiant, healthy skin.",
+    icon: "flower",
+    items: [
+      { id: "s1", name: "Classic Facial", price: 45, duration: 60, description: "Deep cleanse, exfoliation & moisturise" },
+      { id: "s2", name: "Anti-Ageing Facial", price: 75, duration: 75, description: "Guinot luxury anti-wrinkle treatment" },
+      { id: "s3", name: "Brightening Facial", price: 65, duration: 60, description: "Pigmentation & glow-boosting ritual" },
+      { id: "s4", name: "Acne Control Facial", price: 55, duration: 60, description: "Targeted treatment for blemish-prone skin" },
+      { id: "s5", name: "Body Wrap", price: 90, duration: 90, description: "Detox and nourish with essential oils" },
+    ],
+  },
+  {
+    id: 3,
+    category: "Makeup",
+    slug: "makeup",
+    description: "Flawless looks for every occasion — from everyday glam to bridal perfection.",
+    icon: "lipstick",
+    items: [
+      { id: "m1", name: "Party Makeup", price: 60, duration: 60, description: "Bold and beautiful for any event" },
+      { id: "m2", name: "Bridal Makeup", price: 150, duration: 120, description: "Long-lasting bridal look with trial session" },
+      { id: "m3", name: "Natural / Everyday Look", price: 40, duration: 45, description: "Soft, dewy, effortless finish" },
+      { id: "m4", name: "Editorial Makeup", price: 100, duration: 90, description: "Creative & high-fashion looks" },
+    ],
+  },
+  {
+    id: 4,
+    category: "Nails",
+    slug: "nails",
+    description: "Manicure, pedicure and nail art to keep your hands and feet beautiful.",
+    icon: "nail-polish",
+    items: [
+      { id: "n1", name: "Classic Manicure", price: 25, duration: 30, description: "Shape, buff & polish" },
+      { id: "n2", name: "Gel Manicure", price: 40, duration: 45, description: "Long-lasting chip-free shine" },
+      { id: "n3", name: "Classic Pedicure", price: 30, duration: 40, description: "Relaxing soak, scrub & polish" },
+      { id: "n4", name: "Spa Pedicure", price: 50, duration: 60, description: "Luxury ritual with mask and massage" },
+      { id: "n5", name: "Nail Art", price: 20, duration: 30, description: "Custom designs per nail" },
+    ],
+  },
+  {
+    id: 5,
+    category: "Men's Grooming",
+    slug: "mens",
+    description: "Premium grooming for men — haircuts, beard styling and skincare.",
+    icon: "razor",
+    items: [
+      { id: "mg1", name: "Men's Haircut", price: 25, duration: 30, description: "Fade, taper or classic cut" },
+      { id: "mg2", name: "Beard Shaping & Trim", price: 20, duration: 20, description: "Precision beard styling" },
+      { id: "mg3", name: "Hair Colour (Men)", price: 45, duration: 60, description: "Natural or fashion colour" },
+      { id: "mg4", name: "Men's Facial", price: 40, duration: 45, description: "Deep cleanse and skin refresh" },
+    ],
+  },
+  {
+    id: 6,
+    category: "Spa",
+    slug: "spa",
+    description: "Indulgent body treatments to relax, restore and rejuvenate.",
+    icon: "spa",
+    items: [
+      { id: "sp1", name: "Swedish Massage", price: 70, duration: 60, description: "Full body relaxation massage" },
+      { id: "sp2", name: "Deep Tissue Massage", price: 85, duration: 60, description: "Targets tension and muscle knots" },
+      { id: "sp3", name: "Aromatherapy Massage", price: 80, duration: 75, description: "Essential oil blends for mind & body" },
+      { id: "sp4", name: "Hot Stone Therapy", price: 95, duration: 75, description: "Volcanic stones melt away stress" },
+    ],
+  },
+];
+
+module.exports = services;

@@ -4,18 +4,20 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
 
-const authRouter = require("./routes/auth");
-const servicesRouter = require("./routes/services");
-const bookingRouter = require("./routes/booking");
-const galleryRouter = require("./routes/gallery");
-const contactRouter = require("./routes/contact");
+const authRouter = require("./routes/userapp/auth");
+const servicesRouter = require("./routes/userapp/services");
+const bookingRouter = require("./routes/userapp/booking");
+const galleryRouter = require("./routes/userapp/gallery");
+const contactRouter = require("./routes/userapp/contact");
+
+const adminRouter = require("./routes/admin");
 
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-// Middleware
 const allowedOrigins = [
   "http://localhost:3000",
+  "http://localhost:3001",
   "https://habibsalonacademy.com",
   "https://www.habibsalonacademy.com",
   "https://ellieshairbeauty.com",
@@ -38,38 +40,36 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Request logging
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   next();
 });
 
-// Routes
+// User-facing routes
 app.use("/api/auth", authRouter);
 app.use("/api/services", servicesRouter);
 app.use("/api/bookings", bookingRouter);
 app.use("/api/gallery", galleryRouter);
 app.use("/api/contact", contactRouter);
 
-// Health check
+// Admin routes
+app.use("/api/admin", adminRouter);
+
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
 
-// 404 handler
 app.use((req, res) => {
   res.status(404).json({ error: "Route not found" });
 });
 
-// Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: "Internal server error" });
 });
 
-// Connect to DB then start server
 connectDB().then(() => {
   app.listen(PORT, () => {
-    console.log(`✅ Habib Salon and Academy API running on port ${PORT}`);
+    console.log(`Ellie's Hair & Beauty API running on port ${PORT}`);
   });
 });

@@ -6,8 +6,18 @@ export async function fetchServices() {
   return res.json();
 }
 
-export async function fetchGallery(category = "all") {
-  const res = await fetch(`${API_BASE}/gallery/${category}`);
+export async function fetchServiceBySlug(slug) {
+  const res = await fetch(`${API_BASE}/services/${encodeURIComponent(slug)}`);
+  if (!res.ok) throw new Error("Failed to fetch service");
+  return res.json();
+}
+
+export async function fetchGallery(category) {
+  const url =
+    !category || category === "all"
+      ? `${API_BASE}/gallery`
+      : `${API_BASE}/gallery/${encodeURIComponent(category)}`;
+  const res = await fetch(url);
   if (!res.ok) throw new Error("Failed to fetch gallery");
   return res.json();
 }
@@ -18,6 +28,22 @@ export async function createBooking(data) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
+  return res.json();
+}
+
+export async function fetchBookings(token) {
+  const headers = {};
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+  const res = await fetch(`${API_BASE}/bookings`, { headers });
+  if (!res.ok) throw new Error("Failed to fetch bookings");
+  return res.json();
+}
+
+export async function fetchBookingById(id) {
+  const res = await fetch(`${API_BASE}/bookings/${encodeURIComponent(id)}`);
+  if (!res.ok) throw new Error("Failed to fetch booking");
   return res.json();
 }
 
